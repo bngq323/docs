@@ -76,4 +76,9 @@ osmosisd keys add osmo_wallet
 **Important** write this mnemonic phrase in a safe place.
 It is the only way to recover your account if you ever forget your password.
 concert negative vocal viable moment excite curtain bid humble humble return among online net measure sound drum mountain subject spirit lab ordinary engage client
+
+osmosisd query bank balances osmo1gzpus7t4k8jtjvrqp3u3glmjawk3taqznfukx6
+balances:
+- amount: "100000000"
+  denom: uosmo
 ```
