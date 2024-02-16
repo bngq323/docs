@@ -4,8 +4,7 @@ This docuement is for Namada shielded-expedition "S" class:
 My Osmosis node provides rpc service coordinating with Namada SE node to support IBC relayer channel. We can transfer assets via Osmosis and SE testnets. 
 The following is the process deploying on the standlone VPS ubuntu22. 
 
-# Install Namada SE and Hermes
-
+# Install Hermes and Namada SE
 ```
 wget https://github.com/heliaxdev/hermes/releases/download/v1.7.4-namada-beta7/hermes-v1.7.4-namada-beta7-x86_64-unknown-linux-gnu.tar.gz
 tar -xvf hermes-v1.7.4-namada-beta7-x86_64-unknown-linux-gnu.tar.gz
