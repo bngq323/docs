@@ -39,8 +39,12 @@ sudo chmod 755 /etc/systemd/system/hermesd.service
 sudo systemctl daemon-reload
 sudo systemctl enable hermesd
 ```
-Start hermes service
+Install Namada SE v0.31.4
 ```
-sudo systemctl start hermesd && sudo journalctl -u hermesd -f -o cat
+wget https://github.com/anoma/namada/releases/download/v0.31.4/namada-v0.31.4-Linux-x86_64.tar.gz
+tar -xvf namada-v0.31.4-Linux-x86_64.tar.gz && cd namada-v0.31.4-Linux-x86_64
+sudo cp namada namadan namadaw namadac /usr/local/bin/ && cd .. && rm namada-v0.31.4-Linux-x86_64.tar.gz && rm -rf namada-v0.31.4-Linux-x86_64
+namada --version
+Namada v0.31.4
 ```
 
