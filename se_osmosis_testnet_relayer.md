@@ -50,3 +50,16 @@ Namada v0.31.4
 namadac utils join-network --chain-id shielded-expedition.88f17d1d14
 ```
 
+# Prepare wallets for Namada and Osmosis
+Import Namada SE wallet registered before
+```
+namadaw derive --alias se_wallet
+
+namadaw find --alias se_wallet
+Found transparent keys:
+  Alias "se_wallet" (encrypted):
+    Public key hash: 2AD6DC2F0119A52E9BA2E0C2D096D878475AE459
+    Public key: tpknam1qr8plwnj863wsa8lcm92daynl3u8z68uyjtkj8m0l6c6e3rry0euxhyey48
+Found transparent address:
+  "se_wallet": Implicit: tnam1qq4ddhp0qyv62t5m5tsv95ykmpuywkhytyp874cv
+```
