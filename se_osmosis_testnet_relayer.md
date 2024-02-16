@@ -66,4 +66,14 @@ Found transparent address:
 namadac balance --owner se_wallet --node "144.76.65.89:26657"
 naan: 1542.207602
 ```
-Generate an account for Osmosis
+Generate an account for Osmosis and get faucet
+```
+osmosisd keys add osmo_wallet
+- address: osmo1gzpus7t4k8jtjvrqp3u3glmjawk3taqznfukx6
+  name: osmo_wallet
+  pubkey: '{"@type":"/cosmos.crypto.secp256k1.PubKey","key":"AmnzLbKxbP40aZmvi+0XI5jArb8cg0GciumnRoO6CKuT"}'
+  type: local
+**Important** write this mnemonic phrase in a safe place.
+It is the only way to recover your account if you ever forget your password.
+concert negative vocal viable moment excite curtain bid humble humble return among online net measure sound drum mountain subject spirit lab ordinary engage client
+```
