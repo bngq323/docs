@@ -143,3 +143,59 @@ hermes --config $HOME/.hermes/config.toml \
   --b-port transfer \
   --new-client-connection --yes
 ```
+Channels are generated
+```
+channel handshake already finished for Channel { ordering: ORDER_UNORDERED, a_side: ChannelSide { chain: BaseChainHandle { chain_id: shielded-expedition.88f17d1d14 }, client_id: 07-tendermint-439, connection_id: connection-198, port_id: transfer, channel_id: channel-120, version: None }, b_side: ChannelSide { chain: BaseChainHandle { chain_id: osmo-test-5 }, client_id: 07-tendermint-2041, connection_id: connection-1977, port_id: transfer, channel_id: channel-5624, version: None }, connection_delay: 0ns }
+SUCCESS Channel {
+    ordering: Unordered,
+    a_side: ChannelSide {
+        chain: BaseChainHandle {
+            chain_id: ChainId {
+                id: "shielded-expedition.88f17d1d14",
+                version: 0,
+            },
+            runtime_sender: Sender { .. },
+        },
+        client_id: ClientId(
+            "07-tendermint-439",
+        ),
+        connection_id: ConnectionId(
+            "connection-198",
+        ),
+        port_id: PortId(
+            "transfer",
+        ),
+        channel_id: Some(
+            ChannelId(
+                "channel-120",
+            ),
+        ),
+        version: None,
+    },
+    b_side: ChannelSide {
+        chain: BaseChainHandle {
+            chain_id: ChainId {
+                id: "osmo-test-5",
+                version: 5,
+            },
+            runtime_sender: Sender { .. },
+        },
+        client_id: ClientId(
+            "07-tendermint-2041",
+        ),
+        connection_id: ConnectionId(
+            "connection-1977",
+        ),
+        port_id: PortId(
+            "transfer",
+        ),
+        channel_id: Some(
+            ChannelId(
+                "channel-5624",
+            ),
+        ),
+        version: None,
+    },
+    connection_delay: 0ns,
+}
+```
