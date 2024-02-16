@@ -46,5 +46,7 @@ tar -xvf namada-v0.31.4-Linux-x86_64.tar.gz && cd namada-v0.31.4-Linux-x86_64
 sudo cp namada namadan namadaw namadac /usr/local/bin/ && cd .. && rm namada-v0.31.4-Linux-x86_64.tar.gz && rm -rf namada-v0.31.4-Linux-x86_64
 namada --version
 Namada v0.31.4
+
+namadac utils join-network --chain-id shielded-expedition.88f17d1d14
 ```
 
