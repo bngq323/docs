@@ -117,11 +117,12 @@ trust_threshold = { numerator = '1', denominator = '3' }
 rpc_timeout = '20s'
 ```
 # Add Keys in Hermes
-```
 Add Namada key:
+```
 hermes --config $HOME/.osmosisd/config.toml keys add --chain shielded-expedition.88f17d1d14 --key-file $HOME/.local/share/namada/shielded-expedition.88f17d1d14/wallet.toml
-
-Add Osmosis key:
+```
+Add Osmosis key:  
 Input mnemonic phrase of osmo_wallet in ./mnemonic
+```
 hermes --config $HOME/.osmosisd/config.toml keys add --chain osmo-test-5 --mnemonic-file ./mnemonic
 ```
