@@ -206,3 +206,35 @@ namadac balance --owner my-spending-key --node "144.76.65.89:26657"
 Last committed epoch: 7
 naan : 1.5
 ```
+Transfer shielded naan from Namada to Osmosis
+```
+namadac --base-dir $HOME/.local/share/namada \
+    ibc-transfer \
+    --amount 1 \
+    --source my-spending-key \
+    --signing-keys se_wallet \
+    --receiver osmo1gzpus7t4k8jtjvrqp3u3glmjawk3taqznfukx6 \
+    --token naan \
+    --channel-id "channel-120" \
+    --node "144.76.65.89:26657" \
+    --memo tpknam1qr8plwnj863wsa8lcm92daynl3u8z68uyjtkj8m0l6c6e3rry0euxhyey48
+Enter your decryption password: 
+Enter your decryption password: 
+Transaction added to mempool.
+Wrapper transaction hash: 0A0AB8E71960546622C6B9FC38423FC9311BC441086C8C3A3FC981947516EC0E
+Inner transaction hash: DAD377AD939978E15AE89EB10EE8A0A86236E63006F198204D710881144FFBEE
+Wrapper transaction accepted at height 30238. Used 120 gas.
+Waiting for inner transaction result...
+Transaction was successfully applied at height 30239. Used 8602 gas.
+```
+Check balance of osmo_wallet. Received 1 naan successfully.
+```
+osmosisd query bank balances osmo1gzpus7t4k8jtjvrqp3u3glmjawk3taqznfukx6
+balances:
+- amount: "1"
+  denom: ibc/E1121FF5D5A925B1E09E2C77E23E7BA3D12002ABAFB71F0DEDD490145F767829
+- amount: "99986299"
+  denom: uosmo
+```
+
+
