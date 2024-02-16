@@ -82,3 +82,40 @@ balances:
 - amount: "100000000"
   denom: uosmo
 ```
+# configure Hermes
+mkdir $HOME/.osmosisd   
+vi $HOME/.osmosisd/config.toml
+```
+...
+
+[[chains]]
+id = 'shielded-expedition.88f17d1d14' 
+type = 'Namada'
+rpc_addr = 'http://144.76.65.89:26657'  
+grpc_addr = 'http://144.76.65.89:9090' 
+event_source = { mode = 'push', url = 'ws://94.130.90.47:26657/websocket', batch_delay = '500ms' } 
+account_prefix = ''
+key_name = 'se_wallet' 
+store_prefix = 'ibc'
+gas_price = { price = 0.0001, denom = 'tnam1qxvg64psvhwumv3mwrrjfcz0h3t3274hwggyzcee' } 
+rpc_timeout = '20s'
+
+[[chains]]
+id = 'osmo-test-5'
+type = 'CosmosSdk'
+rpc_addr = 'http://127.0.0.1:26657' 
+grpc_addr = 'http://127.0.0.1:9090'
+event_source = { mode = 'push', url = 'ws://127.0.0.1:26657/websocket', batch_delay = '500ms' } 
+account_prefix = 'osmo'
+key_name = 'osmo_wallet'
+address_type = { derivation = 'cosmos' }
+store_prefix = 'ibc'
+gas_price = { price = 0.0025, denom = 'uosmo' }
+gas_multiplier = 1.1
+trusting_period = '5days'
+trust_threshold = { numerator = '1', denominator = '3' }
+rpc_timeout = '20s'
+
+...
+```
+
