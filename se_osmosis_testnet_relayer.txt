@@ -1,0 +1,1 @@
+This docuement is for Namada SE S task: "Operating IBC/ Interoperability infrastructure"-"Operate a Shielded Expedition-compatible Cosmos testnet relayer"
