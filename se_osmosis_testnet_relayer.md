@@ -211,7 +211,7 @@ SUCCESS Channel {
 }
 ```
 
-# Start hermes service
+# Start service of hermes 
 ```
 sudo systemctl start hermesd && sudo journalctl -u hermesd -f -o cat
 ```
