@@ -34,11 +34,13 @@ LimitNOFILE=65535
 WantedBy=multi-user.target
 EOF
 ```
-
-Start hermes service
 ```
 sudo chmod 755 /etc/systemd/system/hermesd.service
 sudo systemctl daemon-reload
 sudo systemctl enable hermesd
+```
+Start hermes service
+```
 sudo systemctl start hermesd && sudo journalctl -u hermesd -f -o cat
 ```
+
