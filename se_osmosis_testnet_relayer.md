@@ -115,7 +115,5 @@ gas_multiplier = 1.1
 trusting_period = '5days'
 trust_threshold = { numerator = '1', denominator = '3' }
 rpc_timeout = '20s'
-
-...
 ```
 
