@@ -6,12 +6,13 @@ We can transfer assets via Osmosis and SE testnets.
 The following is the process deploying on the standlone VPS ubuntu22.  
 
 ---
-Results:  
+Channel:  
 Namada <-> Osmosis  
 "channel-120", "channel-5624"  
 
-Namada RPC:  "144.76.65.89:26657"  
-Osmosis RPC: "127.0.0.1:26657"  
+RPC:  
+Namada:  "144.76.65.89:26657"  
+Osmosis: "127.0.0.1:26657"  
 
 
 # Install Hermes and Namada SE
