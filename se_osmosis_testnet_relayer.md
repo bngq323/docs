@@ -103,7 +103,7 @@ rpc_timeout = '30s'
 [[chains]]
 id = 'osmo-test-5'
 type = 'CosmosSdk'
-rpc_addr = 'http://127.0.0.1:26657'  # set the IP and the port of the chain
+rpc_addr = 'http://127.0.0.1:26657' 
 grpc_addr = 'http://127.0.0.1:9090'
 event_source = { mode = 'push', url = 'ws://127.0.0.1:26657/websocket', batch_delay = '500ms' } 
 account_prefix = 'osmo'
