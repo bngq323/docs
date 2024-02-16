@@ -9,7 +9,7 @@ Results:
 Namada <-> Osmosis  
 channel-120, channel-5624  
 
-Namada RPC:  "144.76.65.89:26657"
+Namada RPC:  "144.76.65.89:26657"  
 Osmosis RPC: "127.0.0.1:26657"  
 
 
