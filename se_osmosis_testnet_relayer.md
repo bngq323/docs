@@ -200,4 +200,7 @@ SUCCESS Channel {
 }
 ```
 # Transfer shielded naan to osmosis
-Generate 
+Check spending key balance.
+```
+namadac balance --owner my-spending-key --node "144.76.65.89:26657"
+```
