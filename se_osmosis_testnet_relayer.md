@@ -126,3 +126,14 @@ Input mnemonic phrase of osmo_wallet in ./mnemonic
 ```
 hermes --config $HOME/.hermes/config.toml keys add --chain osmo-test-5 --mnemonic-file ./mnemonic
 ```
+
+# Establish IBC channel
+```bash
+hermes --config $HOME/.hermes/config.toml \
+  create channel \
+  --a-chain shielded-expedition.88f17d1d14 \
+  --b-chain osmo-test-5 \
+  --a-port transfer \
+  --b-port transfer \
+  --new-client-connection --yes
+```
