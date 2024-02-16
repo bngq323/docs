@@ -5,6 +5,7 @@ My Osmosis node provides rpc service coordinating with My Namada SE node to supp
 We can transfer assets via Osmosis and SE testnets. 
 The following is the process deploying on the standlone VPS ubuntu22.  
 
+---
 Results:  
 Namada <-> Osmosis  
 channel-120, channel-5624  
