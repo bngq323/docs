@@ -66,3 +66,4 @@ Found transparent address:
 namadac balance --owner se_wallet --node "144.76.65.89:26657"
 naan: 1542.207602
 ```
+Generate an account for Osmosis
