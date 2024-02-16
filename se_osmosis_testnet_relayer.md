@@ -1,5 +1,5 @@
 This docuement is for Namada shielded-expedition "S" class: 
-"Operating IBC/ Interoperability infrastructure" - "Operate a Shielded Expedition-compatible Cosmos testnet relayer"  
+"Operating IBC/ Interoperability infrastructure" - "Operate a shielded expedition-compatible Osmosis testnet relayer"  
 
 My Osmosis node provides rpc service coordinating with My Namada SE node to support IBC relayer channel. 
 We can transfer assets via Osmosis and SE testnets. 
