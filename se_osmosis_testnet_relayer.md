@@ -33,7 +33,10 @@ LimitNOFILE=65535
 [Install]
 WantedBy=multi-user.target
 EOF
+```
 
+Start hermes service
+```
 sudo chmod 755 /etc/systemd/system/hermesd.service
 sudo systemctl daemon-reload
 sudo systemctl enable hermesd
