@@ -210,6 +210,12 @@ SUCCESS Channel {
     connection_delay: 0ns,
 }
 ```
+
+# Start hermes service
+```
+sudo systemctl start hermesd && sudo journalctl -u hermesd -f -o cat
+```
+
 # Transfer shielded naan to osmosis
 Check spending key balance.
 ```
