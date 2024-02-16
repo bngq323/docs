@@ -83,7 +83,8 @@ balances:
   denom: uosmo
 ```
 # configure Hermes
-vi $HOME/.osmosisd/config.toml
+mkdir $HOME/.hermes   
+vi $HOME/.hermes/config.toml
 ```
 ...
 
