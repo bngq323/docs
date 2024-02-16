@@ -103,15 +103,21 @@ rpc_timeout = '20s'
 [[chains]]
 id = 'osmo-test-5'
 type = 'CosmosSdk'
-rpc_addr = 'http://127.0.0.1:26657' 
+rpc_addr = 'http://127.0.0.1:26657'  # set the IP and the port of the chain
 grpc_addr = 'http://127.0.0.1:9090'
 event_source = { mode = 'push', url = 'ws://127.0.0.1:26657/websocket', batch_delay = '500ms' } 
 account_prefix = 'osmo'
-key_name = 'osmo_wallet'
+key_name = 'relayer_osmo'
 address_type = { derivation = 'cosmos' }
 store_prefix = 'ibc'
+default_gas = 400000
+max_gas = 120000000
 gas_price = { price = 0.0025, denom = 'uosmo' }
 gas_multiplier = 1.2
+max_msg_num = 30
+max_tx_size = 1800000
+clock_drift = '15s'
+max_block_time = '30s'
 trusting_period = '4days'
 trust_threshold = { numerator = '1', denominator = '3' }
 rpc_timeout = '20s'
