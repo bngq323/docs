@@ -37,7 +37,5 @@ EOF
 sudo chmod 755 /etc/systemd/system/hermesd.service
 sudo systemctl daemon-reload
 sudo systemctl enable hermesd
-sudo systemctl start hermesd 
-sudo systemctl status hermesd
 sudo systemctl start hermesd && sudo journalctl -u hermesd -f -o cat
 ```
