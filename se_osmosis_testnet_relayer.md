@@ -93,7 +93,7 @@ id = 'shielded-expedition.88f17d1d14'
 type = 'Namada'
 rpc_addr = 'http://144.76.65.89:26657'  
 grpc_addr = 'http://144.76.65.89:9090' 
-event_source = { mode = 'push', url = 'ws://94.130.90.47:26657/websocket', batch_delay = '500ms' } 
+event_source = { mode = 'push', url = 'ws://144.76.65.89:26657/websocket', batch_delay = '500ms' } 
 account_prefix = ''
 key_name = 'se_wallet' 
 store_prefix = 'ibc'
