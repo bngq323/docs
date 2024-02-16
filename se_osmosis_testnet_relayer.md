@@ -62,4 +62,7 @@ Found transparent keys:
     Public key: tpknam1qr8plwnj863wsa8lcm92daynl3u8z68uyjtkj8m0l6c6e3rry0euxhyey48
 Found transparent address:
   "se_wallet": Implicit: tnam1qq4ddhp0qyv62t5m5tsv95ykmpuywkhytyp874cv
+
+namadac balance --owner se_wallet --node "144.76.65.89:26657"
+naan: 1542.207602
 ```
