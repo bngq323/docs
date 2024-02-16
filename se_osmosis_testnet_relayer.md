@@ -1,8 +1,8 @@
-This docuement is for Namada shielded-expedition "S" class: "Operating IBC/ Interoperability infrastructure" - "Operate a Shielded Expedition-compatible Cosmos testnet relayer"  
+This docuement is for Namada shielded-expedition "S" class: 
+"Operating IBC/ Interoperability infrastructure" - "Operate a Shielded Expedition-compatible Cosmos testnet relayer"  
 
-My Osmosis node provides rpc service coordinate with Namada SE node to support IBC relayer channel.  
-
-We can transfer faucets via Osmosis and SE testnets. The following is the process deploying on the standlone VPS ubuntu22. 
+My Osmosis node provides rpc service coordinating with Namada SE node to support IBC relayer channel. We can transfer assets via Osmosis and SE testnets. 
+The following is the process deploying on the standlone VPS ubuntu22. 
 
 # Install Namada SE and Hermes
 
