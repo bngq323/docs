@@ -98,7 +98,7 @@ account_prefix = ''
 key_name = 'se_wallet' 
 store_prefix = 'ibc'
 gas_price = { price = 0.0001, denom = 'tnam1qxvg64psvhwumv3mwrrjfcz0h3t3274hwggyzcee' } 
-rpc_timeout = '20s'
+rpc_timeout = '30s'
 
 [[chains]]
 id = 'osmo-test-5'
@@ -120,7 +120,7 @@ clock_drift = '15s'
 max_block_time = '30s'
 trusting_period = '4days'
 trust_threshold = { numerator = '1', denominator = '3' }
-rpc_timeout = '20s'
+rpc_timeout = '30s'
 ```
 # Add Keys in Hermes
 Add Namada key:
