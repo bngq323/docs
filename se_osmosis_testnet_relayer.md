@@ -112,7 +112,7 @@ address_type = { derivation = 'cosmos' }
 store_prefix = 'ibc'
 gas_price = { price = 0.0025, denom = 'uosmo' }
 gas_multiplier = 1.1
-trusting_period = '5days'
+trusting_period = '4days'
 trust_threshold = { numerator = '1', denominator = '3' }
 rpc_timeout = '20s'
 ```
