@@ -237,4 +237,40 @@ balances:
   denom: uosmo
 ```
 
-
+Transfer uosmo from Osmosis to Namada transparant address "se_wallet"
+```
+osmosisd tx ibc-transfer transfer \
+  transfer \
+  channel-5624 \
+  tnam1qq4ddhp0qyv62t5m5tsv95ykmpuywkhytyp874cv \
+  2000000uosmo \
+  --from osmo_wallet \
+  --gas auto \
+  --gas-prices 0.035uosmo \
+  --gas-adjustment 1.2 \
+  --node "http://127.0.0.1:26657" \
+  --home "$HOME/.osmosisd" \
+  --chain-id osmo-test-5 \
+  --yes
+Enter keyring passphrase (attempt 1/3):
+gas estimate: 131150
+code: 0
+codespace: ""
+data: ""
+events: []
+gas_used: "0"
+gas_wanted: "0"
+height: "0"
+info: ""
+logs: []
+raw_log: '[]'
+timestamp: ""
+tx: null
+txhash: 47DDBD4FA11BB6C3F91EFEFDBBB3266E351E086B488993B0D100FD6945DE816D
+```
+Check balance of "se_wallet"
+```
+namadac balance --owner se_wallet --node "144.76.65.89:26657"
+naan: 1500.207602
+transfer/channel-120/uosmo: 2000000
+```
