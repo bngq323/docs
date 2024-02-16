@@ -203,4 +203,6 @@ SUCCESS Channel {
 Check spending key balance.
 ```
 namadac balance --owner my-spending-key --node "144.76.65.89:26657"
+Last committed epoch: 7
+naan : 1.5
 ```
