@@ -5,9 +5,39 @@ My Osmosis node provides rpc service coordinating with Namada SE node to support
 The following is the process deploying on the standlone VPS ubuntu22. 
 
 # Install Hermes and Namada SE
+Download hermes v1.7.4 beta7
 ```
 wget https://github.com/heliaxdev/hermes/releases/download/v1.7.4-namada-beta7/hermes-v1.7.4-namada-beta7-x86_64-unknown-linux-gnu.tar.gz
 tar -xvf hermes-v1.7.4-namada-beta7-x86_64-unknown-linux-gnu.tar.gz
 sudo mv hermes /usr/local/bin && rm hermes-v1.7.4-namada-beta7-x86_64-unknown-linux-gnu.tar.gz
 hermes --version
+```
+
+Deploy hermes service
+```
+sudo tee /etc/systemd/system/hermesd.service > /dev/null <<EOF
+[Unit]
+Description=hermes service
+After=network-online.target
+
+[Service]
+User=$USER
+WorkingDirectory=$HOME/.hermes
+ExecStart=/usr/local/bin/hermes --config $HOME/.hermes/config.toml start
+StandardOutput=syslog
+StandardError=syslog
+Restart=on-failure
+RestartSec=10
+LimitNOFILE=65535
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+sudo chmod 755 /etc/systemd/system/hermesd.service
+sudo systemctl daemon-reload
+sudo systemctl enable hermesd
+sudo systemctl start hermesd 
+sudo systemctl status hermesd
+sudo systemctl start hermesd && sudo journalctl -u hermesd -f -o cat
 ```
