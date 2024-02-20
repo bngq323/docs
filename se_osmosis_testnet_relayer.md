@@ -331,3 +331,77 @@ SUCCESS SendPacket(
     },
 )
 ```
+
+# Check if the channel is operational
+Tx Osmosis -> Namada
+```
+osmosisd tx ibc-transfer transfer \
+  transfer \
+  channel-5683 \
+  tnam1qq4ddhp0qyv62t5m5tsv95ykmpuywkhytyp874cv \
+  3000000uosmo \
+  --from osmo_wallet \
+  --gas auto \
+  --gas-prices 0.035uosmo \
+  --gas-adjustment 1.2 \
+  --node "http://127.0.0.1:26657" \
+  --home "$HOME/.osmosisd" \
+  --chain-id osmo-test-5 \
+  --yes
+Enter keyring passphrase (attempt 1/3):
+gas estimate: 116648
+code: 0
+codespace: ""
+data: ""
+events: []
+gas_used: "0"
+gas_wanted: "0"
+height: "0"
+info: ""
+logs: []
+raw_log: '[]'
+timestamp: ""
+tx: null
+txhash: DD89F3E927B260CD653F15F4794FA18FC4A7568F48C6B006D26AC74A7BCF85D6
+```
+
+Tx Namada -> Osmosis
+```
+namadac --base-dir $HOME/.local/share/namada \
+    ibc-transfer \
+    --amount 1 \
+    --source se_wallet \
+    --signing-keys se_wallet \
+    --receiver osmo1gzpus7t4k8jtjvrqp3u3glmjawk3taqznfukx6 \
+    --token naan \
+    --channel-id "channel-150" \
+    --node "144.76.65.89:26657" \
+    --memo tpknam1qr8plwnj863wsa8lcm92daynl3u8z68uyjtkj8m0l6c6e3rry0euxhyey48
+Enter your decryption password: 
+Transaction added to mempool.
+Wrapper transaction hash: 84FB8F172274FB0B9EF1B829A86DCF0DC63889D9FE3693645BE7F2826915D774
+Inner transaction hash: 81405F7C5CE208FA3A2FC8463E25C2DE5180DEA7BA52755100C9062643A06718
+Wrapper transaction accepted at height 40281. Used 26 gas.
+Waiting for inner transaction result...
+Transaction was successfully applied at height 40282. Used 6193 gas.
+namadanet@vmi1662412:~$ osmosisd query bank balances osmo1gzpus7t4k8jtjvrqp3u3glmjawk3taqznfukx6
+```
+
+# Check balance again
+```
+namadac balance --owner se_wallet --node "144.76.65.89:26657"
+naan: 1452.807602
+transfer/channel-120/uosmo: 2000000
+transfer/channel-150/uosmo: 3000000
+```
+
+```
+query bank balances osmo1gzpus7t4k8jtjvrqp3u3glmjawk3taqznfukx6
+balances:
+- amount: "1"
+  denom: ibc/AA2E8FA94E10000CD564A0458334A55D002EE59BE95D693C060AFE39559F32D6
+- amount: "1"
+  denom: ibc/E1121FF5D5A925B1E09E2C77E23E7BA3D12002ABAFB71F0DEDD490145F767829
+- amount: "297973482"
+  denom: uosmo
+```
