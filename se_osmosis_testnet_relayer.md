@@ -8,7 +8,7 @@ The following is the process deploying on the standlone VPS ubuntu22.
 ---
 Channel:  
 Namada <-> Osmosis  
-"channel-120", "channel-5624"  
+"channel-150", "channel-5683" 
 
 RPC:  
 Namada:  "144.76.65.89:26657"  
