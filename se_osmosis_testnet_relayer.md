@@ -396,7 +396,7 @@ transfer/channel-150/uosmo: 3000000
 ```
 
 ```
-query bank balances osmo1gzpus7t4k8jtjvrqp3u3glmjawk3taqznfukx6
+osmosisd query bank balances osmo1gzpus7t4k8jtjvrqp3u3glmjawk3taqznfukx6
 balances:
 - amount: "1"
   denom: ibc/AA2E8FA94E10000CD564A0458334A55D002EE59BE95D693C060AFE39559F32D6
@@ -510,4 +510,37 @@ naan: 1427.807602
 transfer/channel-120/uosmo: 2000000
 transfer/channel-150/uosmo: 3000000
 transfer/channel-261/uosmo: 1000000
+```
+Tx Namada -> Osmosis
+```
+namadac --base-dir $HOME/.local/share/namada \
+    ibc-transfer \
+    --amount 1 \
+    --source se_wallet \
+    --signing-keys se_wallet \
+    --receiver osmo1gzpus7t4k8jtjvrqp3u3glmjawk3taqznfukx6 \
+    --token naan \
+    --channel-id "channel-261" \
+    --node "http://144.76.65.89:26657" \
+    --memo tpknam1qr8plwnj863wsa8lcm92daynl3u8z68uyjtkj8m0l6c6e3rry0euxhyey48
+Enter your decryption password: 
+Transaction added to mempool.
+Wrapper transaction hash: 71822DC92C4F763DFFBAAEBD93F96BAB5998FAF0E2E415DDC5DDBA698BEAE933
+Inner transaction hash: 070705620D47A82D846BC80804670C4816B2F38C10E87FA5E0559D76983F5E62
+Wrapper transaction accepted at height 46215. Used 26 gas.
+Waiting for inner transaction result...
+Transaction was successfully applied at height 46216. Used 6193 gas.
+```
+Check balance of osmo_wallet for Osmosis
+```
+osmosisd query bank balances osmo1gzpus7t4k8jtjvrqp3u3glmjawk3taqznfukx6
+balances:
+- amount: "1"
+  denom: ibc/176D216E7668A67D748E7AC257414BE9BC01874E6107EF9D859C5BC3C45849EC
+- amount: "1"
+  denom: ibc/AA2E8FA94E10000CD564A0458334A55D002EE59BE95D693C060AFE39559F32D6
+- amount: "1"
+  denom: ibc/E1121FF5D5A925B1E09E2C77E23E7BA3D12002ABAFB71F0DEDD490145F767829
+- amount: "393949739"
+  denom: uosmo
 ```
