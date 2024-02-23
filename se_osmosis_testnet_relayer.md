@@ -471,4 +471,43 @@ SUCCESS Channel {
     connection_delay: 0ns,
 }
 ```
-
+# Check if new channels are operational for namada v0.31.6
+Tx Osmosis -> Namada
+```
+osmosisd tx ibc-transfer transfer \
+  transfer \
+  channel-5806 \
+  tnam1qq4ddhp0qyv62t5m5tsv95ykmpuywkhytyp874cv \
+  1000000uosmo \
+  --from osmo_wallet \
+  --gas auto \
+  --gas-prices 0.035uosmo \
+  --gas-adjustment 1.2 \
+  --node "http://127.0.0.1:26657" \
+  --home "$HOME/.osmosisd" \
+  --chain-id osmo-test-5 \
+  --yes
+Enter keyring passphrase (attempt 1/3):
+gas estimate: 131182
+code: 0
+codespace: ""
+data: ""
+events: []
+gas_used: "0"
+gas_wanted: "0"
+height: "0"
+info: ""
+logs: []
+raw_log: '[]'
+timestamp: ""
+tx: null
+txhash: 0A4701DCE15FA7C52B6367A4F92C8EC7E13BC18E0AF9AFAD50D4AD98BF557361
+```
+Check balance of se_wallet for Namada v0.31.6
+```
+namadac balance --owner se_wallet --node "http://144.76.65.89:26657"
+naan: 1427.807602
+transfer/channel-120/uosmo: 2000000
+transfer/channel-150/uosmo: 3000000
+transfer/channel-261/uosmo: 1000000
+```
