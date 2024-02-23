@@ -8,7 +8,7 @@ The following is the process deploying on the standlone VPS ubuntu22.
 ---
 Channel:  
 Namada <-> Osmosis  
-"channel-150", "channel-5683" 
+"channel-261", "channel-5806" 
 
 RPC:  
 Namada:  "144.76.65.89:26657"  
@@ -118,7 +118,7 @@ rpc_addr = 'http://127.0.0.1:26657'
 grpc_addr = 'http://127.0.0.1:9090'
 event_source = { mode = 'push', url = 'ws://127.0.0.1:26657/websocket', batch_delay = '500ms' } 
 account_prefix = 'osmo'
-key_name = 'relayer_osmo'
+key_name = 'osmo_wallet'
 address_type = { derivation = 'cosmos' }
 store_prefix = 'ibc'
 default_gas = 400000
@@ -405,3 +405,70 @@ balances:
 - amount: "297973482"
   denom: uosmo
 ```
+
+# Create new IBC relayer for namada v0.31.6
+```
+hermes --config $HOME/.hermes/config.toml \
+  create channel \
+  --a-chain shielded-expedition.88f17d1d14 \
+  --b-chain osmo-test-5 \
+  --a-port transfer \
+  --b-port transfer \
+  --new-client-connection --yes
+```
+New channels are generated
+```
+SUCCESS Channel {
+    ordering: Unordered,
+    a_side: ChannelSide {
+        chain: BaseChainHandle {
+            chain_id: ChainId {
+                id: "shielded-expedition.88f17d1d14",
+                version: 0,
+            },
+            runtime_sender: Sender { .. },
+        },
+        client_id: ClientId(
+            "07-tendermint-993",
+        ),
+        connection_id: ConnectionId(
+            "connection-401",
+        ),
+        port_id: PortId(
+            "transfer",
+        ),
+        channel_id: Some(
+            ChannelId(
+                "channel-261",
+            ),
+        ),
+        version: None,
+    },
+    b_side: ChannelSide {
+        chain: BaseChainHandle {
+            chain_id: ChainId {
+                id: "osmo-test-5",
+                version: 5,
+            },
+            runtime_sender: Sender { .. },
+        },
+        client_id: ClientId(
+            "07-tendermint-2233",
+        ),
+        connection_id: ConnectionId(
+            "connection-2117",
+        ),
+        port_id: PortId(
+            "transfer",
+        ),
+        channel_id: Some(
+            ChannelId(
+                "channel-5806",
+            ),
+        ),
+        version: None,
+    },
+    connection_delay: 0ns,
+}
+```
+
